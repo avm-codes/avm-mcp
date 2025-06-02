@@ -26,7 +26,7 @@ const TOOLS = {
 const server = new Server(
   {
     name: "avm",
-    version: "1.0.0",
+    version: "1.0.1",
   },
   {
     capabilities: {
@@ -76,7 +76,7 @@ server.setRequestHandler(
                 "Content-Type": "application/json",
                 "avm-x-api-key": apiKey,
               },
-              body: JSON.stringify({ code: input.code }),
+              body: JSON.stringify({ code: input.code, language: "python" }),
             });
 
             if (response.ok) {
